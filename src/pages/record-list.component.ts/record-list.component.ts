@@ -17,7 +17,7 @@ import { BabyStateService } from '../../core/baby-state.service';
     }
 
     @if (state.todayRecords().length > 0) {
-      <div class="space-y-3">
+      <div class="space-y-6 max-w-xl">
         @for (r of state.todayRecords(); track r.id) {
           <div class="border rounded p-3">
             <div class="text-xs text-gray-500">{{ r.time }}</div>

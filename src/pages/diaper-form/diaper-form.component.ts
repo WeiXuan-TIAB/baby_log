@@ -7,10 +7,11 @@ import { BabyStateService } from '../../core/baby-state.service';
   standalone: true,
   imports: [FormsModule],
   template: `
+    <section class="space-y-4 flex flex-col items-center">
     <h1 class="text-xl font-semibold mb-4">尿布記錄</h1>
-    <form class="space-y-3 max-w-md" (ngSubmit)="submit()">
-      <div class="flex gap-2">
-        <select [(ngModel)]="status" name="status" class="border rounded px-3 py-2">
+    <form class="space-y-3 max-w-md w-full" (ngSubmit)="submit()">
+      <div class="flex gap-3">
+        <select [(ngModel)]="status" name="status" class="border rounded px-3 py-2 w-full">
           <option value="urine">尿尿</option>
           <option value="stool">便便</option>
           <option value="mixed">綜合</option>
@@ -20,6 +21,7 @@ import { BabyStateService } from '../../core/baby-state.service';
       <textarea [(ngModel)]="note" name="note" rows="2" class="border rounded px-3 py-2 w-full placeholder-gray-400" placeholder="備註"></textarea>
       <button class="px-3 py-2 rounded bg-black text-white">儲存</button>
     </form>
+    </section>
   `,
 })
 export class DiaperFormComponent {

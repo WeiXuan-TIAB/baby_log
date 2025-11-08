@@ -7,10 +7,11 @@ import { BabyStateService } from '../../core/baby-state.service';
   standalone: true,
   imports: [FormsModule],
   template: `
+  <section class="space-y-4 flex flex-col items-center">
     <h1 class="text-xl font-semibold mb-4">飲食</h1>
-    <form class="space-y-3 max-w-md" (ngSubmit)="submit()">
-      <div class="flex gap-2">
-        <select [(ngModel)]="foodType" name="foodType" class="border rounded px-3 py-2">
+    <form class="space-y-3  max-w-xl" (ngSubmit)="submit()">
+      <div class="flex gap-3">
+        <select [(ngModel)]="foodType" name="foodType" class="border rounded px-3 py-2 w-full">
           <option value="milk">牛奶</option>
           <option value="solid">副食品</option>
         </select>
@@ -19,12 +20,13 @@ import { BabyStateService } from '../../core/baby-state.service';
           <input [(ngModel)]="amount" name="amount" type="number" class="border rounded px-3 py-2 w-32" placeholder="ml" />
         }
 
-        <input [(ngModel)]="time" name="time" type="datetime-local" class="border rounded px-3 py-2" />
       </div>
+      <input [(ngModel)]="time" name="time" type="datetime-local" class="border rounded px-3 py-2" />
 
       <textarea [(ngModel)]="note" name="note" rows="2" class="border rounded px-3 py-2 w-full placeholder-gray-400" placeholder="備註"></textarea>
       <button class="px-3 py-2 rounded bg-black text-white">Save</button>
     </form>
+
   `,
 })
 
